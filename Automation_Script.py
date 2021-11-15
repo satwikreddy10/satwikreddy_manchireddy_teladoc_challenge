@@ -1,7 +1,7 @@
+# Adding a user and deleting user novak
 import unittest
 
 from selenium import webdriver
-
 from Users_Page import UsersPage
 
 
@@ -13,6 +13,7 @@ class Automation(unittest.TestCase):
         self.driver.get('https://www.way2automation.com/angularjs-protractor/webtables/')
         self.driver.maximize_window()
 
+        # Adding the user and validate that user is added to the table
         user_page = UsersPage(self.driver)
         user_page.click_add()
         user_page.enter_first_name("test_firstname")
@@ -33,6 +34,7 @@ class Automation(unittest.TestCase):
         self.driver.get('https://www.way2automation.com/angularjs-protractor/webtables/')
         self.driver.maximize_window()
 
+        # Deleting user novak and validate that user is deleted from the table
         user_page = UsersPage(self.driver)
         user_page.delete_user("novak")
         user_page.click_popup_ok_button()
